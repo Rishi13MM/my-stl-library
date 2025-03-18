@@ -1,0 +1,31 @@
+#include <stdexcept>
+
+using namespace std;
+
+class ArrayOverflow : public runtime_error
+{
+public:
+  ArrayOverflow() : runtime_error("Size of array is insufficient") {};
+  ArrayOverflow(const string &msg) : runtime_error(msg) {};
+};
+
+class InvalidCapacity : public runtime_error
+{
+public:
+  InvalidCapacity() : runtime_error("Array size must be 1 or more.") {};
+  InvalidCapacity(const string &msg) : runtime_error(msg) {};
+};
+
+class SelfAssignment : public runtime_error
+{
+public:
+  SelfAssignment() : runtime_error("Cannot assign an object to itself.") {};
+  SelfAssignment(const string &msg) : runtime_error(msg) {};
+};
+
+class ArrayUnderflow : public runtime_error
+{
+public:
+  ArrayUnderflow() : runtime_error("Array is empty!") {};
+  ArrayUnderflow(const string &msg) : runtime_error(msg) {};
+};
