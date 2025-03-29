@@ -1,0 +1,22 @@
+#include <stdexcept>
+#include <string>
+
+#ifndef CUSTOM_EXCEPTION_HPP
+
+#define CUSTOM_EXCEPTION_HPP
+
+class Underflow : public std::runtime_error
+{
+public:
+  Underflow(const std::string& msg):runtime_error(msg){};
+  Underflow():runtime_error("List is empty!"){};
+};
+
+class InvalidNodePointer : public std::runtime_error
+{
+public:
+InvalidNodePointer(const std::string& msg):runtime_error(msg){};
+InvalidNodePointer():runtime_error("Pointer to a node is invalid!"){};
+};
+
+#endif
