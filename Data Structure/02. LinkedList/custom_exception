@@ -22,7 +22,7 @@ InvalidNodePointer():runtime_error("Pointer to a node is invalid!"){};
 class NodeNotFound: public std::runtime_error{
   public:
   NodeNotFound(const std::string& msg):runtime_error(msg){}
-  NodeNotFound():runtime_error("Node is present in the list."){}
+  NodeNotFound():runtime_error("Node is not present in the list."){}
 };
 
 #endif
