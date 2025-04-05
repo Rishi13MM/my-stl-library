@@ -8,21 +8,19 @@
 class Underflow : public std::runtime_error
 {
 public:
-  Underflow(const std::string& msg):runtime_error(msg){};
-  Underflow():runtime_error("List is empty!"){};
+  explicit Underflow(const std::string &msg = "List is empty!") : runtime_error(msg) {};
 };
 
 class InvalidNodePointer : public std::runtime_error
 {
 public:
-InvalidNodePointer(const std::string& msg):runtime_error(msg){};
-InvalidNodePointer():runtime_error("Pointer to a node is invalid!"){};
+  explicit InvalidNodePointer(const std::string &msg = "Pointer to a node is invalid!") : runtime_error(msg) {};
 };
 
-class NodeNotFound: public std::runtime_error{
-  public:
-  NodeNotFound(const std::string& msg):runtime_error(msg){}
-  NodeNotFound():runtime_error("Node is not present in the list."){}
+class NodeNotFound : public std::runtime_error
+{
+public:
+  explicit NodeNotFound(const std::string &msg = "Node is not present in the list.") : runtime_error(msg) {}
 };
 
 #endif
